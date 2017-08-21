@@ -1,0 +1,25 @@
+<view  class="container main">
+  <view class="show">{{show}}</view>
+  <view class="answer">
+    <text class="rest" bindtap="rest">重置</text><text class="return">{{eq}}</text>
+  </view>
+  <view class="number">
+     <text id="7" bindtap="numberInput">7</text>   
+     <text id="8" bindtap="numberInput">8</text>
+     <text id="9" bindtap="numberInput">9</text>
+     <text id="4" bindtap="numberInput">4</text>
+     <text id="5" bindtap="numberInput">5</text>
+     <text id="6" bindtap="numberInput">6</text>
+     <text id="1" bindtap="numberInput">1</text>
+     <text id="2" bindtap="numberInput">2</text>
+     <text id="3" bindtap="numberInput">3</text>
+     <text id="0" bindtap="numberInput">0</text>
+     <text id="eq" bindtap="eq">=</text>
+  </view>
+  <view class="operat">
+     <text id="1" bindtap="operat">+</text>   
+     <text id="2" bindtap="operat">-</text>
+     <text id="3" bindtap="operat">*</text>
+     <text id="4" bindtap="operat">/</text>
+  </view>
+</view>
