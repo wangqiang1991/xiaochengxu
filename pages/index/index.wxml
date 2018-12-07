@@ -1,13 +1,18 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <view class="usermotto">
-   <text class="demo" bindtap="gotodemo1" >demo1</text>
-   <text class="demo">demo2</text>
-   <text class="demo">demo3</text>
-   <text class="demo">demo4</text>
-  </view>
+<!--pages/index/index.wxml-->
+<text>首页</text>
+
+<button bindtap='gotoLogin' data-title='xiaowang' data-key='1'>跳转</button>
+
+<button bindtap='changeData'>父组件改变子组件值</button>
+
+<component-header str='父组件传过来的值' setObj="{{obj}}"  bindmyevent="myevent" ></component-header>
+
+<button open-type='getUserInfo' bindgetuserinfo='getUser'>拉取用户数据</button>
+
+<button bindtap='getUserLocal' data-type='1'>获取地理位置信息</button>
+
+<button bindtap='getUserLocal' data-type='2'>打开地图 </button>
+
+<view>
+{{localMeaages}}
 </view>

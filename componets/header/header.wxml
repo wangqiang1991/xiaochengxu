@@ -1,0 +1,18 @@
+<!--componets/header/header.wxml-->
+<text>公共组件</text>
+
+<text>{{str}}</text>
+
+<view>{{name}}</view>
+
+<text>{{setObj.name}}</text>
+
+<text wx:key="{{item}}" wx:for="{{setObj.array}}">
+{{index}} {{item}}
+</text>
+
+<text wx:if="{{false}}">666</text>
+<text hidden='{{true}}'>888</text>
+
+<button bindtap='setData'>子组件传值到父组件</button>
+
