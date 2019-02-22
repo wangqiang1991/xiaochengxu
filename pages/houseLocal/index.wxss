@@ -1,0 +1,62 @@
+/* pages/houseLocal/index.wxss */
+page{
+  background: #eee;
+}
+.content{
+  width: 690rpx;
+  margin:30rpx auto 0;
+  box-shadow: 0 1px 4px 0 #cacaca;
+  border-radius: 5px;
+  background: white;
+  height: auto;
+}
+.item{
+  width: 630rpx;
+  padding-left:30rpx;
+  padding-right: 30rpx; 
+  height: 120rpx;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #343434;
+}
+.item:last-child{
+  border-bottom: none;
+}
+.operation{
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.operation>view{
+  width: 40rpx;
+  height: 40rpx;
+  background: white;
+  color: #ff9800;
+  font-size: 14px;
+  text-align: center;
+  line-height: 40rpx;
+  border: 1px solid #ff9800;
+  display: block;
+  font-weight: 700;
+}
+.operation>text{
+  display: block;
+  width: 60rpx;
+  text-align: center;
+  font-size: 14px;
+  color: #343434;
+}
+.sure{
+  width: 690rpx;
+  position: fixed;
+  left: 30rpx;
+  bottom:50rpx;
+  background: #ff9800;
+  color: white;
+  font-size: 18px;
+    border-radius:0; 
+  box-shadow: 1px 1px 4px 1px #cacaca;
+}

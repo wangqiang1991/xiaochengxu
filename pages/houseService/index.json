@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "服务需求发布",
+  "usingComponents": {
+    "myToast": "/componets/myToast/index"
+  }
+}

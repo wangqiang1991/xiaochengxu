@@ -1,0 +1,111 @@
+/* pages/personInformation/index.wxss */
+
+page {
+  background: #eee;
+}
+.matchView{
+ width: 690rpx;
+  height: auto;
+  margin: 30rpx auto 0;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px 0 #cacaca;
+}
+.row {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.columRow{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.spaceView {
+  width: 630rpx;
+  height: 1rpx;
+}
+
+.rightIcon {
+  align-self: center;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.headImgView {
+  align-self: center;
+  border-radius: 50%;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  margin-right: 10rpx;
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.txtView{
+  font-size: 14px;
+  align-self: center;
+}
+.txtDesc{
+font-size: 14px;
+}
+.valueTxtView{
+  font-size: 14px;
+  align-self: center;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  margin-right: 10rpx;
+}
+.valueTxtDesc{
+ font-size: 14px;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  margin-right: 10rpx;
+}
+
+.rightView{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.grayLine {
+  background: #eee;
+  width: 630rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  height: 1px;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+.section__title{
+  margin-bottom: 20rpx;
+}
+.section{
+  margin: 50rpx 0;
+  font-size: 30rpx;
+}
+
+.rowBt{
+  height: 65rpx;
+  background-color:white;
+  border: white;
+  width: 690rpx;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.rowBt::after {
+  border: 0;
+}

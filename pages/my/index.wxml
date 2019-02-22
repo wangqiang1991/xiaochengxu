@@ -1,0 +1,58 @@
+<!--pages/my/index.wxml-->
+<view class='content'  hidden="{{state!=1}}" style="width:{{width}}px;height:{{height}}px;">
+
+  <view class='spaceView'></view>
+
+  <view class='myHeadItemView'>
+    <view class='upView'>
+      <view class='rightView'>
+        <view class='nameAndGenderView'>
+          <text class='nameView'>{{nickName}}</text>
+          <image src='{{gender}}' class='genderView'></image>
+        </view>
+        <text class='phoneView'>{{phone}}</text>
+      </view>
+      <image class='headImgView' src='{{headImg ? headImg:"/static/images/defalt_uer.png"}}'></image>
+    </view>
+    <view class='downView'>
+      <text class='descView'>{{personalDesc}}</text>
+    </view>
+  </view>
+
+  <view class='clickItemView'>
+    <view class='itemView' bindtap='toPerson'>
+      <view class='leftView'>
+        <image class='genderView' src='/static/images/person_information.png'></image>
+        <text class='titleText'>个人资料</text>
+      </view>
+      <image class='rightIcon' src='/static/images/arrow_right.png'></image>
+    </view>
+
+    <view class='grayLine'></view>
+
+    <view class='itemView' bindtap='toCustomService'>
+      <view class='leftView'>
+        <image class='genderView' src='/static/images/custom_service.png'></image>
+        <text class='titleText'>客服</text>
+      </view>
+      <image class='rightIcon' src='/static/images/arrow_right.png'></image>
+    </view>
+
+    <view class='grayLine'></view>
+
+    <view class='itemView' bindtap='toAgreement'>
+      <view class='leftView'>
+        <image class='genderView' src='/static/images/agreement.png'></image>
+        <text class='titleText'>用户协议</text>
+      </view>
+      <image class='rightIcon' src='/static/images/arrow_right.png'></image>
+    </view>
+  </view>
+
+  <button class='signOutBt' bindtap='signOut'>退出登陆</button>
+
+</view>
+
+<view class='noLoginBox' hidden='{{state!=3}}'>
+  <loginView bind:loginSuccess="loginSuccess"></loginView>
+</view>

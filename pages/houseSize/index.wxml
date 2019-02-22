@@ -1,0 +1,117 @@
+<!--pages/houseSize/index.wxml-->
+<myToast id="myToast"></myToast>
+
+<view class='content'>
+
+  <view class='item'>
+    <text>卧室</text>
+    <view class='operation'>
+      <view bindtap='subbed'>-</view>
+      <text>{{bedRoomNumber}}</text>
+      <view bindtap='addbed'>+</view>
+    </view>
+  </view>
+
+  <view class='item'>
+    <text>客厅</text>
+    <view class='operation'>
+      <view bindtap='subliv'>-</view>
+      <text>{{livingRoomNumber}}</text>
+      <view bindtap='addliv'>+</view>
+    </view>
+  </view>
+
+  <view class='item'>
+    <text>卫生间</text>
+    <view class='operation'>
+      <view bindtap='subwas'>-</view>
+      <text>{{washRoomNumber}}</text>
+      <view bindtap='addwas'>+</view>
+    </view>
+  </view>
+
+  <view class='item'>
+    <text>厨房</text>
+    <view class='operation'>
+      <view bindtap='subkit'>-</view>
+      <text>{{kitchenNumber}}</text>
+      <view bindtap='addkit'>+</view>
+    </view>
+  </view>
+
+  <view class='item'>
+    <text>书房</text>
+    <view class='operation'>
+      <view bindtap='subsch'>-</view>
+      <text>{{schoolRoomNumber}}</text>
+      <view bindtap='addsch'>+</view>
+    </view>
+  </view>
+
+  <view class='item'>
+    <text>阳台</text>
+    <view class='operation'>
+      <view bindtap='subbal'>-</view>
+      <text>{{balconyNumber}}</text>
+      <view bindtap='addbal'>+</view>
+    </view>
+  </view>
+
+  <view class='item'>
+    <text>车库</text>
+    <view class='operation'>
+      <view bindtap='subcar'>-</view>
+      <text>{{carport}}</text>
+      <view bindtap='addcar'>+</view>
+    </view>
+  </view>
+
+    <view class='item'>
+    <text>储藏室</text>
+    <view class='operation'>
+      <view bindtap='substo'>-</view>
+      <text>{{storageRoom}}</text>
+      <view bindtap='addsto'>+</view>
+    </view>
+  </view>
+
+    <view class='item'>
+    <text>娱乐室</text>
+    <view class='operation'>
+      <view bindtap='subrum'>-</view>
+      <text>{{rumpusRoom}}</text>
+      <view bindtap='addrum'>+</view>
+    </view>
+  </view>
+
+    <view class='item'>
+    <text>健身房</text>
+    <view class='operation'>
+      <view bindtap='subfit'>-</view>
+      <text>{{fitnessRoom}}</text>
+      <view bindtap='addfit'>+</view>
+    </view>
+  </view>
+
+    <view class='item'>
+    <text>休闲室</text>
+    <view class='operation'>
+      <view bindtap='sublou'>-</view>
+      <text>{{loungeRoom}}</text>
+      <view bindtap='addlou'>+</view>
+    </view>
+  </view>
+
+    <view class='item'>
+    <text>花园</text>
+    <view class='operation'>
+      <view bindtap='subgar'>-</view>
+      <text>{{garden}}</text>
+      <view bindtap='addgar'>+</view>
+    </view>
+  </view>
+</view>
+
+<view style='width:750rpx;height:180rpx;'></view>
+
+<button class='sure' bindtap='subHouseSize'>确定</button>

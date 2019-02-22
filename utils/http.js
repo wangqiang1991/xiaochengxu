@@ -1,5 +1,7 @@
+import { showErrorToast } from './util.js'
+
 function request(method = "GET", url, data = {}) {
-  console.log(method, url)
+  console.log(method, url,)
   return new Promise(function (resolve, reject) {
     wx.request({
       url: url,
@@ -7,30 +9,42 @@ function request(method = "GET", url, data = {}) {
       method:method,
       header:{
         'Content-Type': 'application/json',
-        'access_token': wx.getStorageSync('accessToken')
+        'access_token': wx.getStorageSync('access_token')
       },
       success:function(res) {
         if(res.data.code != 0) {
+
           if (res.data.code == 401 || res.data.code == 402 || res.data.code == 403 ){
-            wx.removeStorageSync('accessToken')
+            wx.removeStorageSync('access_token');
+            wx.removeStorageSync('userInfo');
           }
-          wx.showToast({
-            title: res.data.message,
-            image:'/assets/images/defeat.png',
-            duration: 2000
-          })
-          resolve(res)
+          
+          showErrorToast(res.data.message)
+          reject(res.data)
         } else {
-          resolve(res)
+          resolve(res.data)
         }
       },
       fail:function(res) {
-        wx.showToast({
-          title: '服务器繁忙',
-          image: '/assets/images/defeat.png',
-          duration: 2000
-        })
-        reject(res)
+        var msg = res.errMsg;
+        if (msg === "request:fail url not in domain list") {
+          wx.showModal({
+            content: '当前版本为开发版本，请打开调式再使用，并重启。',
+            success(res) {
+              if (res.confirm) {
+                // 打开调试
+                wx.setEnableDebug({
+                  enableDebug: true
+                })
+              } else {
+                reject(res)
+              }
+            }
+          });
+        } else {
+          showErrorToast("网络错误")
+          reject(res)
+        }
       }
     })
   });
@@ -58,5 +72,3 @@ export default {
     return request("HEAD", url, data);
   }
 }
-
-

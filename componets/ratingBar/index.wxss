@@ -1,0 +1,6 @@
+/* componets/ratingBar/index.wxss */
+.mark-like image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 10rpx;
+}

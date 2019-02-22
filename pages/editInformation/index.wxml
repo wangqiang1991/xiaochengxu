@@ -1,0 +1,8 @@
+<!--pages/editInformation/index.wxml-->
+<view class='editView'>
+  <input class='edit' value='{{inputValue}}' bindinput='getInput' type='{{type}}' placeholder='{{tipsValue}}'></input>
+</view>
+
+<image class='deleteIcon' src='/static/images/new_icon_close.png' bindtap='cleanClick'></image>
+
+<button class='saveBt' bindtap='save'>保存</button>

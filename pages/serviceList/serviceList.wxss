@@ -1,0 +1,128 @@
+/* pages/serviceList/serviceList.wxss */
+page{
+  background: #eee;
+}
+.content{
+  width: 100%;
+  height: auto;
+  padding-bottom: 30rpx;
+}
+.fixBox{
+  position: fixed;
+  left: 0; top: 0;
+  width: 750rpx;
+  height: 80rpx;
+  border-bottom: 1px solid #eee;
+  background: white;
+  overflow: hidden;
+  display: flex;
+  
+}
+.fixBox text{
+  font-size: 16px;
+  color: #999;
+  border-bottom: none;
+  padding-bottom: 10rpx;
+  font-weight: 600;
+}
+.fixBox text.choice{
+  color: #ff9800;
+  border-bottom: 2px solid #ff9800;
+}
+.fixLeft{
+  flex: 1;
+  height: 60rpx;
+  text-align: center;
+  border-right: 1px solid #ddd;
+}
+.fixRight{
+  flex: 1;
+  height: 60rpx;
+  text-align: center;
+}
+
+.item{
+  width: 690rpx;
+  margin:30rpx auto 0;
+  box-shadow: 0 1px 4px 0 #cacaca;
+  border-radius: 5px;
+  background: white;
+  padding: 30rpx 0 0;
+}
+.title{
+  padding:0 30rpx;
+  font-size: 18px;
+  font-weight: 700;
+  color: #343434;
+  margin-bottom: 20rpx;
+  display: block;
+}
+.desc{
+  font-size: 14px;
+  color: #666;
+  padding: 0 30rpx;
+  margin-bottom: 20rpx;
+  display: block;
+}
+.number{
+  font-size: 14px;
+  color: #999;
+  padding: 0 30rpx;
+  margin-bottom: 20rpx; 
+  display: block;
+}
+.line{
+  width: 100%;
+  height: 1px;
+  background: #cacaca;
+}
+.bottom{
+  height: 100rpx;
+  display: flex;
+  padding: 0 30rpx;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #343434;
+}
+.reminder{
+  width: 200rpx;
+  height: 60rxp;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 16px;
+  border-radius: 30rpx;
+  background: #ff9800;
+  color: white;
+}
+.reminder-disabled{
+  width: 200rpx;
+  height: 60rxp;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 16px;
+  border-radius: 30rpx;
+  background: #999999;
+  color: white;
+}
+.assess{
+  width: 200rpx;
+  height: 60rxp;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 16px;
+  border-radius: 30rpx;
+  background: #fff;
+  border: 1px solid #ff9800;
+  color: #ff9800;
+}
+.noData {
+  color: black;
+  font-size: 16px;
+  margin-top: 100rpx;
+}
+.noDataView {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}

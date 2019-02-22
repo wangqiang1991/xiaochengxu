@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "服务工单详情",
+  "usingComponents": {
+    "ratingBar": "/componets/ratingBar/index"
+  }
+}

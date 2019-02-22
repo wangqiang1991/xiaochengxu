@@ -1,0 +1,31 @@
+/* pages/publishSuccess/index.wxss */
+.content{
+  width: 100%;
+  height: auto;
+  padding-top: 100rpx;
+}
+.content>image{
+  display: block;
+  width: 350rpx;
+  height: 350rpx;
+  margin: auto;
+}
+.content>text{
+  font-size: 18px;
+  font-weight: 700;
+  display: block;
+  margin:0 auto 100rpx;
+  color: #84bb4b;
+  text-align: center;
+}
+.content>view{
+  width: 360rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #666;
+  border: 1px solid #ff9800;
+  font-size: 14px;
+  margin: auto;
+}

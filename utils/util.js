@@ -40,8 +40,8 @@ export function parseTime(time, cFormat) {
 export function showErrorToast(msg) {
   wx.showToast({
     title: msg,
-    image:"/assets/images/defeat.png",
-    duration:1500
+    icon: "none",
+    duration: 1500
   })
 }
 
@@ -49,7 +49,33 @@ export function showErrorToast(msg) {
 export function showSuccessToast(msg) {
   wx.showToast({
     title: msg,
-    image: "/assets/images/success.png",
+    icon: "success",
     duration: 1500
   })
+}
+
+export function oneDayTime() {
+  let timeArry = [];
+  for(var k = 0; k < 2; k++){
+    timeArry[k] = [];
+    if(k == 0){
+      for (var i = 0; i < 24; i++) {
+        if (i < 10) {
+          timeArry[k][i] = "0" + i;
+        } else {
+          timeArry[k][i] = i + '';
+        }
+      }
+    } else {
+      for (var j = 0; j < 60; j++) {
+        if (j < 10) {
+          timeArry[k][j] = "0" + j;
+        } else {
+          timeArry[k][j] = j + '';
+        }
+      }
+    }
+  }
+  console.log(timeArry)
+  return timeArry;
 }

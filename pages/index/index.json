@@ -1,6 +1,7 @@
 {
-  "navigationBarTitleText": "首页",
-  "usingComponents":{
-    "component-header": "/componets/header/header"
+  "navigationBarTitleText": "全寓家政",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "loginView": "/componets/loginView/loginView"
   }
 }

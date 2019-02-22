@@ -1,10 +1,12 @@
 // pages/index/index.js
-import { parseTime, showErrorToast, showSuccessToast } from '../../utils/util.js'
+import {
+  parseTime,
+  showErrorToast,
+  showSuccessToast
+} from '../../utils/util.js'
 import http from '../../utils/http.js'
 import config from '../../config/api.js'
 import validate from "../../utils/validate.js"
-import QQMapWX from "../../assets/js/qqmap-wx-jssdk.js"
-var qqmapsdk;
 //获取应用实例
 const app = getApp()
 
@@ -14,205 +16,173 @@ Page({
    * 页面的初始数据
    */
   data: {
-    phone:'13212345658',
-    numberCout:1,
-    localMeaages:'',
-    obj:{
-      name:'wang',
-      age:18,
-      array:['12','34']
-    }
+    houseData: [],
+    pageHeight: 200,
+    pageIndex: 1,
+    pageSize: 100,
+    noMoreData:false,
+    state: 0,
+    showDate: false,
+    selectedDate: ''
   },
+  getHouse() {
+    let that = this;
+    let params = {};
+    params.pageIndex = this.data.pageIndex;
+    params.pageSize = this.data.pageSize;
+    if (params.pageIndex == 1){
+      wx.showLoading({ title: '加载中' })
+    }
+    http.get(config.house_list,params).then((res)=>{
+      wx.hideLoading()
+      wx.stopPullDownRefresh()
 
+      let data = res.data;
+
+      if (data.length ||  that.data.houseData.length){
+        that.setData({ state: 1 })
+        let houseData = that.data.houseData;
+        for(var i = 0; i <data.length; i++){
+          houseData.push(data[i]);
+        }
+        that.setData({ houseData: houseData })
+        if(data.length < 100){
+          that.setData({ noMoreData: true })
+        } else {
+          let pageIndex = that.data.pageIndex+1;
+         
+          that.setData({ pageIndex: pageIndex });
+        }
+
+      } else {
+        
+        that.setData({state:2})
+        
+      }
+    }).catch((res) => {
+      wx.hideLoading()
+      wx.stopPullDownRefresh()
+      if (res.code == 401 || res.code == 402 || res.code == 403) {
+        that.setData({
+          state: 3
+        });
+      }
+    })
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    qqmapsdk = new QQMapWX({
-      key: 'CUEBZ-RWD3D-7WV4J-PNQJV-GHNAK-W6F4O'
-    });
-
-
-
-    wx.showLoading({
-      title: '加载中',
-    })
-    setTimeout(()=>{
-      wx.hideLoading();
-    },500)
-    console.log('onLoad++++++++++++++++++++++')
-    console.log(this.data.phone)
-    console.log(validate.validatPhone(this.data.phone))
-    //this.loadData();
+  onLoad: function(options) {
+    console.log('onLoad 1');
+    // this.selectComponent("#dateView").setDate(2020, 3, 5, 8, 6);
+    let login = app.isLogin();
+    if (!login) {
+      this.setData({
+        state: 3
+      });
+    } else {
+      this.getHouse();
+    }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-    console.log('onready++++++++++++++++++++++')
+  onReady: function() {
+    console.log('onReady 3')
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-    console.log('onShow+++++++++++++++++++')
+  onShow: function() {
+    console.log('onShow 2')
+
+    let login = app.isLogin();
+    if (!login) {
+      this.setData({
+        state: 3
+      });
+    } else {
+      if (app.globalData.refreshHome) {
+        app.globalData.refreshHome = false;
+        this.onPullDownRefresh();
+      }
+    }
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-    console.log('onHide+++++++++++++++++++')
+  onHide: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-    console.log('onUnload++++++++++++++++')
+  onUnload: function() {
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-
+  onPullDownRefresh: function() {
+   
+    let houseData = [];
+    let pageIndex = 1;
+    let noMoreData = false;
+    this.setData({
+      houseData: houseData,
+      pageIndex: pageIndex,
+      noMoreData: noMoreData
+    })
+    this.getHouse();
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-
+  onReachBottom: function() {
+   
+    if(!this.data.noMoreData){
+      this.getHouse();
+    }
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
-  loadData() {
-    http.get(config.index).then((res)=>{
-      console.log(res)
-    }).catch((res)=>{
-      console.log(res)
-    })
-  },
-  gotoLogin(e) {
-    console.log(e)
-    let title = e.currentTarget.dataset.title;
-    let key = e.currentTarget.dataset.key;
-    console.log(title,key)
+  gotoAddHouse: function() {
+
     wx.navigateTo({
-      url: '/pages/login/login?data=' +title + '|' + key ,
+      url: '../addHouseFirst/index?status=add'
     })
   },
-  myevent(e) {
-    console.log(e.detail)
+  loginSuccess() {
+    this.onPullDownRefresh();
   },
-  changeData() {
-    let newobj = {
-      name:'wang1',
-      age:88,
-      array: ['121', '343']
-    }
+  showDateView() {
     this.setData({
-      obj: newobj
-    })
-  },
-  getUser(e) {
-    console.log(e)
-    if (e.detail.userInfo) {
-      wx.login({
-        success:(res)=>{
-          console.log(res.code, e.detail.iv, e.detail.encryptedData)
-        }
-      })
-    } else {
-      wx.showToast({
-        title: "为了您更好的体验,请先同意授权",
-        icon: 'none',
-        duration: 2000
-      });
-    }
-  },
-  getUserLocal(e) {
-    let that = this;
-    let type = e.currentTarget.dataset.type;
-    wx.getSetting({
-      success(res) {
-        if (!res.authSetting['scope.userLocation']){
-          console.log('初始化授权失败')
-          wx.openSetting({
-            success(res) {
-              console.log(res.authSetting)
-              if (res.authSetting["scope.userLocation"]) {
-                console.log('地理位置授权成功')
-                if(type == 1){
-                  that.localMeg();
-                } else {
-                  that.openMap();
-                }
-                
-              } else {
-                console.log('地理位置授权失败')
-              }
-            }
-          })
-        } else {
-          if (type == 1) {
-            that.localMeg();
-          } else {
-            that.openMap();
-          }
-        }
-      }
-    })
-  },
-  openMap() {
-    wx.chooseLocation({
-      success(res) {
-        console.log(res)
-      }
-    })
-  },
-  localMeg() {
-    let that = this;
-    wx.getLocation({
-      type: 'wgs84',
-      success(res) {
-        console.log(res)
-        const latitude = res.latitude
-        const longitude = res.longitude
-        const speed = res.speed
-        const accuracy = res.accuracy
-        that.getLocal(latitude, longitude)
-      }
-    })
-  },
-  getLocal(latitude, longitude) {
-    let that = this;
-    qqmapsdk.reverseGeocoder({
-      location: {
-        latitude: latitude,
-        longitude: longitude
-      },
-      success: function (res) {
-        console.log(res)
-      
-        that.setData({
-          localMeaages: res.result.address
-        })
-      },
-      fail: function (res) {
-        console.log(res);
-      }
+      showDate: true
     });
-
+  },
+  dateConfirm(res) {
+    console.log(res.detail);
+    this.setData({
+      showDate: false,
+      selectedDate: res.detail
+    });
+  },
+  gotoDetail: function(e) {
+    app.globalData.houseItemData = e.currentTarget.dataset.houseitem;
+    wx.navigateTo({
+      url: '../houseDetail/index'
+    })
   }
-
-
 })

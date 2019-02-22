@@ -1,0 +1,57 @@
+<!--pages/houseDetail/index.wxml-->
+<view class='content'>
+  <text class='title'>房屋基本信息</text>
+  <view class='detailbox'>
+    <text class='houseTitle'>{{houseData.houseName}}</text>            
+    <text class='desc'>{{houseData.villageName}} · {{houseData.detailAddress}}</text>
+    <text class='detail'>{{houseData.typeName}}  | {{houseData.bedRoomNumber}}室{{houseData.livingRoomNumber}}厅 | {{houseData.acreage}}m²</text>
+  </view>
+
+  <text class='title'>房屋基本信息</text>
+  <view class='detailbox'>
+    <text class='desc'><text class="bf">国家或地区：</text>中国大陆</text>            
+    <text class='desc'><text class="bf">城市：</text>{{houseData.provinceName}}{{houseData.cityName}}{{houseData.countyName}}</text>
+    <view class='detailLocal'>
+      <text><text class="bf">详细地址：</text>{{houseData.houseAddress}}</text>
+      <view bindtap='navigation' class='localBox'>
+        <image src='/static/images/navigation.png'></image>
+        <text>导航去这里</text>
+      </view>
+    </view>
+
+    <view class='map'>
+      <!-- <map id="map"
+      enable-zoom="{{enableZoom}}"
+      enable-scroll="{{enableScroll}}" 
+        longitude="{{longitude}}"
+        latitude="{{latitude}}"
+        markers="{{markers}}"
+        scale="14"
+        style="width: 100%; height: 100%;">
+      </map> -->
+      <!-- <view></view> -->
+      <image class='mapImage' src="https://apis.map.qq.com/ws/staticmap/v2/?center={{latitude}},{{longitude}}&zoom=14&scale=2&size=315*200&maptype=roadmap&markers=size:tiny|icon:http%3a%2f%2fappsource.goochao.com%2flocalImage1.png|{{latitude}},{{longitude}}&key=KQJBZ-XIQWF-YATJH-NKWZU-CKBU2-TMBKB"></image>
+    </view>
+    
+    
+  </view>
+
+  <text class='title'>入住规则</text>
+  <view class='BasicBox'>
+    <view class='boxLine'>
+      <text>入住时间:</text>
+      <text>{{enterTime}}后</text>
+    </view>
+
+    <view class='boxLine'>
+      <text>离店时间:</text>
+      <text>{{leaveTime}}前</text>
+    </view>
+
+  </view>
+
+  <view class='operationBox'>
+    <view bindtap='editHouse' class='edit'> <image src='/static/images/edit.png'></image> 编辑</view>
+    <view bindtap='gotoHouseService' class='service'> <image src='/static/images/service.png'></image> 家政服务</view>
+  </view>
+</view>

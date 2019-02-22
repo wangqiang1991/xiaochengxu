@@ -1,1 +1,86 @@
 /* pages/index/index.wxss */
+.content{
+  width: 100%;
+  height: auto;
+  padding-bottom: 30rpx;
+}
+.houseItemView{
+  width: 630rpx;
+  height: auto;
+  margin: 30rpx auto 0;
+  background: white;
+  box-shadow: 0 1px 4px 0 #cacaca;
+  padding: 30rpx;
+  border-radius: 5px;
+}
+.houstTitle{
+  font-size: 18px;
+  font-weight: 700;
+  color: #343434;
+  margin-bottom:8px; 
+  display: block;
+}
+.houseLocal{
+  font-size: 14px;
+  color: #343434;
+  margin-bottom: 8px;
+  display: block;
+}
+.houseDetail{
+  font-size: 12px;
+  color: #999;
+  display: block;
+}
+.addHouse{
+ z-index: 10;
+ width: 120rpx;
+ height: 60rpx;
+ padding-top: 30rpx;
+ padding-bottom:30rpx; 
+ background: #ff9800;
+ border-radius: 50%;
+ position: fixed;
+ right: 50rpx;
+ bottom: 50rpx; 
+ text-align: center;
+ box-shadow: 1px 1px 4px 0 #cacaca;
+}
+.addHouse image{
+  width: 30rpx;
+  height: 30rpx;
+  display: block;
+  margin: auto;
+}
+.addHouse text{
+  display: block;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 12px;
+  color: white;
+  font-weight: 700;
+}
+
+.noDataBox{
+  width: 100%;
+  height: auto;
+  background: white;
+}
+.noDataTitle{
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  color: #343434;
+  margin-top:200rpx; 
+  margin-bottom: 30rpx;
+}
+.addHouseButton{
+  width: 300rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #343434;
+  font-size: 14px;
+  display: block;
+  margin: auto;
+  border: 1px solid #343434;
+}

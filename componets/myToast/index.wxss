@@ -1,0 +1,35 @@
+/* componets/myToast/index.wxss */
+.toast_content_box {  
+  display: flex;  
+  width: 100%;  
+  height: 100%;  
+  justify-content: center;  
+  align-items: center;  
+  position: fixed;  
+  z-index: 999;  
+}  
+.toast_content {  
+  width: 50%;  
+  padding: 30rpx;  
+  background: rgba(0, 0, 0, 0.8);  
+  border-radius: 20rpx;  
+  
+}  
+.showToast{
+  animation: toastKF 2s;
+}
+@keyframes toastKF{
+  0% {opacity: 0;}
+  25% {opacity: 1; z-index: 9999}
+  50% {opacity: 1; z-index: 9999}
+  75% {opacity: 1; z-index: 9999}
+  100% {opacity: 0; z-index: 0}
+}
+
+.toast_content_text {  
+  height: 100%;  
+  width: 100%;  
+  color: #fff;  
+  font-size: 28rpx;  
+  text-align: center;  
+} 

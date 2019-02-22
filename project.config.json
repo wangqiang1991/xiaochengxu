@@ -13,9 +13,9 @@
 		"uglifyFileName": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.4.1",
-	"appid": "wxc98a7a1cbd4ddec5",
-	"projectname": "testGoochao",
+	"libVersion": "2.5.1",
+	"appid": "wxcc234d7e1f08bc75",
+	"projectname": "quanyu",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -34,13 +34,44 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 0,
+			"list": [
+				{
+					"id": 0,
+					"name": "102test",
+					"pathName": "pages/houseServiceType/index",
+					"query": "houseId= \"qMNrdp6W\"",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "103test",
+					"pathName": "pages/userLogin/userLogin",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "104test",
+					"pathName": "pages/serviceList/serviceList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/my/index",
+					"query": ""
+				}
+			]
 		}
 	}
 }

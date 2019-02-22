@@ -1,14 +1,64 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/login/login"
+    "pages/serviceList/serviceList",
+    "pages/my/index",
+    "pages/addHouseFirst/index",
+    "pages/addHouseSecond/index",
+    "pages/houseType/index",
+    "pages/houseSize/index",
+    "pages/houseLocal/index",
+    "pages/customService/index",
+    "pages/houseDetail/index",
+    "pages/houseService/index",
+    "pages/publishSuccess/index",
+    "pages/serviceDetail/index",
+    "pages/personInformation/index",
+    "componets/loginView/loginView",
+    "componets/myToast/index",
+    "pages/serviceComment/index",
+    "componets/ratingBar/index",
+    "pages/editInformation/index",
+    "pages/agreement/index",
+    "pages/houseServiceType/index"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#343434",
+    "selectedColor": "#ff9839",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/images/home_off.png",
+        "selectedIconPath": "static/images/home_on.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/serviceList/serviceList",
+        "iconPath": "static/images/serviceList_off.png",
+        "selectedIconPath": "static/images/serviceList_on.png",
+        "text": "服务工单"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "iconPath": "static/images/my_off.png",
+        "selectedIconPath": "static/images/my_on.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取您当前的地理位置"
+    }
   },
   "networkTimeout": {
     "request": 15000,

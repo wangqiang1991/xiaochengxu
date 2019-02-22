@@ -1,0 +1,91 @@
+<!--pages/serviceDetail/index.wxml-->
+<view class='content {{(detail.orderStatus != 3) || (detail.orderStatus == 3 && !detail.comment) ? "content-bottom-show" : "content-bottom-def"}}' hidden='{{detail == null}}'>
+  <text class='title'>工单基本信息</text>
+  <view class='messageBox'>
+    <text class='serviceTitle'>{{detail.houseVo.houseName}}</text>
+    <view class='boxItem'>服务类型:
+      <text class='type'>{{detail.housekeepingVo.serviceName}}</text>
+    </view>
+    <view class='boxItem'>工单编号:
+      <text>NO.{{detail.orderNumber}}</text>
+    </view>
+    <view class='boxItem'>工单状态:
+      <text class='type' hidden='{{detail.orderStatus == 3}}'>未完成</text>
+      <text class='type' hidden='{{detail.orderStatus != 3}}'>已完成</text>
+    </view>
+    <view class='boxItem'>发布时间:
+      <text>{{detail.createdDate}}</text>
+    </view>
+    <view class='boxItem' hidden='{{detail.orderStatus != 3}}'>完成时间:
+      <text>{{detail.completeDateStr}}</text>
+    </view>
+    <view class='boxItem'>期望完成时:
+      <text>{{detail.beginDateStr}}至{{detail.endDateStr}}</text>
+    </view>
+    <view class='boxItem'>服务工单备注:
+      <text>{{detail.remark ? detail.remark : "无"}}</text>
+    </view>
+    <view class='boxItem'>服务内容:
+      <text class='type'>{{detail.housekeepingVo.desc}}</text>
+    </view>
+
+  </view>
+
+  <text class='title' wx:if="{{detail.supplierEmployeeVo}}">服务人员信息</text>
+  <view class='messageBox1' wx:if="{{detail.supplierEmployeeVo}}">
+    <view class='name'>{{detail.supplierEmployeeVo.reallyName}}
+      <image src='/static/images/{{detail.supplierEmployeeVo.gender == 1 ? "gender_man" : "girl"}}.png'></image>
+    </view>
+    <view class='score'>
+      <image src='/static/images/star_select.png'></image> {{detail.supplierEmployeeVo.score / 10}}分</view>
+    <view class='phone' bindtap='makePhoneCall' data-number='{{detail.supplierEmployeeVo.phone}}'> {{detail.supplierEmployeeVo.phone}}
+      <image src='/static/images/phone.png'></image>
+    </view>
+    <image class='userImage' src='{{detail.supplierEmployeeVo.headImg ? detail.supplierEmployeeVo.headImg : "/static/images/defalt_uer.png"}}'></image>
+  </view>
+
+  <text class='title' wx:if="{{detail.startImagesArray.length}}">服务之前</text>
+  <view class='serviceImageBox' wx:if="{{detail.startImagesArray.length}}">
+    <text>{{detail.startDesc ? detail.startDesc : ""}}</text>
+    <view><image data-image='{{item}}' bindtap='previewBefore' wx:key="{{item}}" wx:for="{{detail.startImagesArray}}" src='{{item}}?imageView2/1/w/200/h/200|imageslim'></image> </view>
+  </view>
+
+  <text class='title' wx:if="{{detail.completeImagesArray.length}}">服务之后</text>
+  <view class='serviceImageBox' wx:if="{{detail.completeImagesArray.length}}">
+    <text>{{detail.completeDesc ? detail.completeDesc : ""}}</text>
+    <view><image data-image='{{item}}' bindtap='previewAfter' data-image='{{item}}' wx:key="{{item}}" wx:for="{{detail.completeImagesArray}}" src='{{item}}?imageView2/1/w/200/h/200|imageslim'></image> </view>
+  </view>
+
+
+  <text class='title' wx:if='{{detail.comment}}'>我的点评</text>
+  <view class='messageBox2' wx:if='{{detail.comment}}'>
+    <view class='myScore'>
+      <ratingBar enable="{{false}}" mark="{{detail.commentVo.score}}"></ratingBar>
+    </view>
+    <text class='myMessage'>{{detail.commentVo.content}}</text>
+    <view class='imageBox'>
+      <image wx:key="{{item}}" wx:for="{{detail.commentVo.imageArr}}" src='{{item}}?imageView2/1/w/200/h/200|imageslim' bindtap='perviewImage' data-image="{{item}}"></image>
+
+      <!-- <view class='zoomBox'wx:key="{{item}}" wx:for="{{detail.commentVo.imageArr}}" bindtap='perviewImage' data-image="{{item}}" >
+          <view class='zoomImage'  style="background-image:url({{item}})"></view>
+        </view> -->
+
+    </view>
+  </view>
+
+
+  <view wx:if='{{detail.orderStatus != 3}}' class='bottom'>
+  </view>
+  <view wx:if='{{detail.orderStatus != 3}}' class='next' bindtap='hasten' data-order-id='{{detail.orderId}}'>
+    <image src='/static/images/hasten.png'></image>
+    我要催单
+  </view>
+
+  <view wx:if='{{detail.orderStatus == 3 && !detail.comment}}' class='bottom'>
+  </view>
+  <view wx:if='{{detail.orderStatus == 3 && !detail.comment}}' class='next' bindtap='comment' data-order-id='{{detail.orderId}}'>
+    <image src='/static/images/star.png'></image>
+    服务点评
+  </view>
+
+</view>

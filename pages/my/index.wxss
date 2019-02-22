@@ -1,0 +1,124 @@
+/* pages/my/index.wxss */
+
+.content {
+  background: #eee;
+}
+
+.spaceView {
+  width: 630rpx;
+  height: 1rpx;
+}
+
+.myHeadItemView {
+  width: 630rpx;
+  height: auto;
+  margin: 30rpx auto 0;
+  background: white;
+  padding: 30rpx;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px 0 #cacaca;
+}
+
+.clickItemView {
+  width: 630rpx;
+  height: auto;
+  margin: 30rpx auto 0;
+  background: white;
+  padding: 30rpx;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px 0 #cacaca;
+}
+
+.nameAndGenderView {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.upView {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.downView {
+  margin-bottom: 20rpx;
+}
+
+.headImgView {
+  align-self: center;
+  border-radius: 50%;
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.nameView {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.phoneView {
+  font-size: 14px;
+  color: #666666;
+}
+
+.descView {
+  font-size: 14px;
+}
+
+.genderView {
+  align-self: center;
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+}
+
+.itemView {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rightIcon {
+  align-self: center;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.titleText {
+  text-align: center;
+  font-size: 14px;
+}
+
+.leftView {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.grayLine {
+  background: #eee;
+  width: 630rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  height:1px;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.signOutBt {
+  width: 690rpx;
+  background: #ff9800;
+  color: white;
+  font-size: 14px;
+  border-radius: 0px;
+  height: 90rpx;
+  margin-top: 150rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30rpx;
+  box-shadow: 1px 1px 4px 1px #cacaca;
+  position:fixed;
+  bottom: 50rpx;
+}

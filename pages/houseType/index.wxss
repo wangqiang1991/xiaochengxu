@@ -1,0 +1,60 @@
+/* pages/houseType/index.wxss */
+page{
+  background: #eee;
+}
+.content{
+  width: 100%;
+  height: auto;
+  padding-bottom: 30rpx;
+}
+.title{
+  display: block;
+  margin: 50rpx auto 30rpx;
+  width: 690rpx;
+  font-size: 16px;
+  color: #343434;
+  font-weight: 700;
+}
+.houseTypeItem{
+  width: 690rpx;
+  height: auto;
+  box-shadow: 0 1px 4px 0 #cacaca;
+  border-radius: 5px;
+  background: white;
+  margin: auto;
+}
+.item{
+  width: 630rpx;
+  padding-left:30rpx;
+  padding-right: 30rpx; 
+  height: 120rpx;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #343434;
+}
+.item:last-child{
+  border-bottom: none;
+}
+.item>view{
+  width: 560rpx;
+}
+.item>image{
+  width: 21px;
+  height: 16px;
+}
+.name{
+  font-size: 14px;
+  color: #343434;
+  display: block;
+}
+.choiceName{
+  color: #ff9800;
+}
+.desc{
+  font-size: 14px;
+  color: #999;
+  display: block;
+}

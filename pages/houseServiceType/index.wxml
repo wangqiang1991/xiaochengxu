@@ -1,0 +1,12 @@
+<!--pages/houseServiceType/index.wxml-->
+<view class='content'>
+   <view class='houseTypeItem'>
+      
+      <view class='item' wx:key="{{item.serviceId}}" wx:for="{{houseTypeData}}" data-serviceName='{{item}}' bindtap='choiceSevice'>
+        <text class='title {{item.serviceId == serviceId ? "choiceTitle" : ""}} '>{{item.serviceName}}</text>
+        <image wx:if='{{item.serviceId == serviceId }}' src='/static/images/choice.png'></image>
+        <view class='desc'><text>{{item.desc}}</text></view>
+      </view>
+
+   </view>
+</view>

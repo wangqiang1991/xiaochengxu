@@ -1,18 +1,26 @@
 <!--pages/index/index.wxml-->
-<text>首页</text>
+<view class='content' hidden="{{state!=1}}">
 
-<button bindtap='gotoLogin' data-title='xiaowang' data-key='1'>跳转</button>
+  <view wx:key="item.houseId" wx:for="{{houseData}}" class='houseItemView' data-houseItem='{{item}}' bindtap='gotoDetail'>
+    <text class='houstTitle'>{{item.houseName}}</text>
+    <text class='houseLocal'>{{item.villageName}} · {{item.detailAddress}}</text>
+    <text class='houseDetail'>{{item.bedRoomNumber}}室{{item.livingRoomNumber}}厅{{item.washRoomNumber}}卫 <text class='line'> | </text> {{item.acreage}}m²</text>
+  </view>
 
-<button bindtap='changeData'>父组件改变子组件值</button>
+  <view class='addHouse'  bindtap='gotoAddHouse'>
+    <image src='/static/images/add.png'></image>
+    <text>新增</text>
+  </view>
 
-<component-header str='父组件传过来的值' setObj="{{obj}}"  bindmyevent="myevent" ></component-header>
-
-<button open-type='getUserInfo' bindgetuserinfo='getUser'>拉取用户数据</button>
-
-<button bindtap='getUserLocal' data-type='1'>获取地理位置信息</button>
-
-<button bindtap='getUserLocal' data-type='2'>打开地图 </button>
-
-<view>
-{{localMeaages}}
 </view>
+
+
+<view class='noDataBox' hidden='{{state!=2}}'>
+  <text class='noDataTitle'>没有房屋数据</text>
+  <text bindtap='gotoAddHouse' class='addHouseButton'>+ 添加房屋</text>
+</view>
+
+<view class='noLoginBox' hidden='{{state!=3}}'>
+  <loginView bind:loginSuccess="loginSuccess"></loginView>
+</view>
+

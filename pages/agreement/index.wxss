@@ -1,0 +1,32 @@
+/* pages/agreement/index.wxss */
+
+.body{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+
+.title{
+  font-size: 16px;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  font-weight: bold;
+  text-align: center;
+}
+
+.content{
+  font-size: 12px;
+  margin-top: 20rpx;
+}
+
+.item{
+  margin-top: 5rpx;
+  margin-left: 80rpx;
+  font-size: 12px;
+}
+
+.botton{
+
+  height: 100rpx;
+}

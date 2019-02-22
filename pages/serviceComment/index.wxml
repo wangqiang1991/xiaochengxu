@@ -1,0 +1,29 @@
+<!--pages/serviceComment/index.wxml-->
+<view class='content'>
+  <view class='messageBox'>
+    <view class='top'>
+      <text>服务评分</text>
+      <ratingBar bind:markChange="markChange" mark="{{score}}"></ratingBar>
+    </view>
+    <view class='mcontent'>
+      <text>满意度评价</text>
+      <textarea bindinput="contentChange" maxlength='200' placeholder="请输入您的满意度评价" auto-focus />
+      <view class='imageBox'>
+        <view  wx:key="{{item}}" wx:for="{{images}}"><image bindtap='perviewImage' data-image='{{item}}' src='{{item}}'></image><image data-image='{{item}}' bindtap='removeImage' class='close' src='/static/images/close.png'></image></view>
+        
+
+        <!-- <view class='zoomBox' wx:key="{{item}}" wx:for="{{images}}">
+          <view class='zoomImage'  style="background:url('{{item}}')"></view>
+        </view>
+         -->
+        <view class='chocieImageBox' wx:if='{{images.length != 3}}'><image wx:if='{{images.length != 3}}' bindtap='chooseImages' src='/static/images/camera.png'></image> </view>
+      
+      </view>
+    </view>
+  </view>
+
+  <view class='btn' bindtap='submitComment'>
+    提交评价
+  </view>
+
+</view>

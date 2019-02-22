@@ -1,0 +1,6 @@
+<!--pages/publishSuccess/index.wxml-->
+<view class='content'>
+  <image src='/static/images/publishSuccess.png'></image>
+  <text>发布成功</text>
+  <view class='bakc' bindtap='backTab'>返回工单首页</view>
+</view>

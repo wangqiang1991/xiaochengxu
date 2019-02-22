@@ -1,0 +1,40 @@
+<!--pages/houseLocal/index.wxml-->
+<myToast id="myToast"></myToast>
+<view class='content'>
+
+  <view class='item'>
+    <text>房屋所在栋数</text>
+    <view class='operation'>
+      <view bindtap='subhou'>-</view>
+      <text>{{houseOrder}}</text>
+      <view bindtap='addhou'>+</view>
+    </view>
+  </view>
+  <view class='item'>
+    <text>房屋所在单元</text>
+    <view class='operation'>
+      <view bindtap='subuni'>-</view>
+      <text>{{unit}}</text>
+      <view bindtap='adduni'>+</view>
+    </view>
+  </view>
+  <view class='item'>
+    <text>房屋楼层</text>
+    <view class='operation'>
+      <view bindtap='subflo'>-</view>
+      <text>{{floor}}</text>
+      <view bindtap='addflo'>+</view>
+    </view>
+  </view>
+  <view class='item'>
+    <text>房号</text>
+    <view class='operation'>
+      <view bindtap='subnum'>-</view>
+      <text>{{number}}</text>
+      <view bindtap='addnum'>+</view>
+    </view>
+  </view>
+
+</view>
+
+<button class='sure' bindtap='subHouseSize'>确定</button>

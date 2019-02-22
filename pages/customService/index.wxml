@@ -1,0 +1,11 @@
+<!--pages/customService/index.wxml-->
+<view>
+  <view class='itemView'>
+    <image src='/static/images/custom_service.png' class='icon'></image>
+    <view class='textView'>
+    <view class='serviceTxt'>咨询时间9:00-18:00</view>
+    <view class='serviceTxt2'>028-85678699</view>
+    </view>
+    <button class='callBt' bindtap='call'>立即咨询</button>
+  </view>
+</view>

@@ -1,0 +1,73 @@
+/* pages/houseService/index.wxss */
+page{
+  background: #eee;
+}
+.content{
+  width: 100%;
+  height: auto;
+  padding-top: 30rpx;
+}
+
+.BasicBox{
+  width: 690rpx;
+  margin: auto;
+  box-shadow: 0 1px 4px 0 #cacaca;
+  border-radius: 5px;
+  background: white;
+}
+.boxLine{
+  width: 630rpx;
+  padding-left:30rpx;
+  padding-right: 30rpx; 
+  height: 100rpx;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #343434;
+}
+.boxRight{
+  display: flex;
+  align-items: center;
+}
+.boxRight text{
+  color: #000;
+}
+.boxRight input{
+  text-align: right;
+}
+.boxRight image{
+  width: 20px;
+  height: 20px;
+}
+
+.message{
+  width: 630rpx;
+  padding-left:30rpx;
+  padding-right: 30rpx; 
+  height: auto;
+  font-size: 12px;
+  color: #343434;
+  overflow: hidden;
+  padding-bottom: 30rpx;
+}
+.message>text{
+  display: block;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+.message>textarea{
+  height: 100rpx;
+}
+.publish{
+  width: 690rpx;
+  position: fixed;
+  left: 30rpx;
+  bottom:50rpx;
+  background: #ff9800;
+  color: white;
+  font-size: 18px;
+  border-radius:0; 
+  box-shadow: 1px 1px 4px 1px #cacaca;
+}

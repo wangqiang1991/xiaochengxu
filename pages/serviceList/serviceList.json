@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "服务工单",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance":50,
+  "usingComponents": {
+    "loginView": "/componets/loginView/loginView"
+  }
+}

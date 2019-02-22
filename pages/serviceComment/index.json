@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "服务点评",
+  "usingComponents": {
+    "ratingBar": "/componets/ratingBar/index"
+  }
+}

@@ -1,0 +1,97 @@
+<!--pages/houseService/index.wxml-->
+<myToast id="myToast"></myToast>
+<view class='content'>
+
+  <view class='BasicBox'>
+
+    <view class='boxLine'>
+      <text class='boxLeft'>服务项目</text>
+      <view class='boxRight' bindtap='choiceServiceType'>
+        
+        <!-- <picker bindchange="bindPickerChange" value="{{index}}" range="{{houseTypeNameData}}">
+          <view class="picker" style='font-size:14px;'>
+            {{houseTypeNameData[index]}}
+          </view>
+        </picker> -->
+
+        <view style='font-size:14px;'> {{serviceName ? serviceName : "请选择服务类型"}}</view>
+        <image src='/static/images/arrow_right.png'></image>
+
+      </view> 
+    </view>
+
+    <view class='boxLine'>
+      <text class='boxLeft'>最早开始时间</text>
+      <view class='boxRight'>
+        <view class='boxRight'>
+          
+            <picker
+              mode="date"
+              value="{{edate}}"
+              bindchange="eDateChange"
+            >
+              <view class="picker" style='font-size:14px;'>
+                {{edate}}
+              </view>
+            </picker>
+
+            <picker
+              mode="multiSelector"
+              bindchange="eTimeChange"
+              value="{{emultiIndex}}"
+              range="{{timeArray}}"
+            >
+              <view class="picker" style='font-size:14px;margin-left:10rpx;'>
+                {{etime}}后
+              </view>
+            </picker>
+
+          <image src='/static/images/arrow_right.png'></image>
+        </view> 
+      </view> 
+    </view>
+
+    <view class='boxLine'>
+      <text class='boxLeft'>最晚结束时间</text>
+      <view class='boxRight'>
+        <view class='boxRight'>
+            <picker
+              mode="date"
+              value="{{ldate}}"
+              bindchange="lDateChange"
+            >
+              <view class="picker" style='font-size:14px;'>
+                {{ldate}}
+              </view>
+            </picker>
+
+            <picker
+              mode="multiSelector"
+              bindchange="lTimeChange"
+              value="{{lmultiIndex}}"
+              range="{{timeArray}}"
+            >
+              <view class="picker" style='font-size:14px;margin-left:10rpx;'>
+                {{ltime}}前
+              </view>
+            </picker>
+
+          <image src='/static/images/arrow_right.png'></image>
+        </view> 
+      </view> 
+    </view>
+
+    <view class='message'>
+      <text>需求备注</text>
+      <textarea bindinput='textInput' placeholder='请输入您的备注信息(非必填)' maxlength='255'></textarea>
+    </view>
+
+  </view>  
+
+  <button class='publish' bindtap='publish'>确认发布</button>
+
+  <!-- <form bindsubmit="formSubmit" report-submit='true' bindreset="formReset">
+    <button class='publish' form-type="submit" > 确认发布 </button>
+  </form> -->
+
+</view>

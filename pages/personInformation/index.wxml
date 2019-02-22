@@ -1,0 +1,65 @@
+<!--pages/personInformation/index.wxml-->
+
+<view class='spaceView'></view>
+
+<view class='matchView'>
+<view class='grayLine'></view>
+  <view class='row' bindtap='getImage'>
+    <text class='txtView'>头像</text>
+    <view class='rightView'>
+      <image class='headImgView' src='{{headImg ? headImg:"/static/images/defalt_uer.png"}}'></image>
+      <image class='rightIcon' src='/static/images/arrow_right.png'></image>
+    </view>
+  </view>
+  <view class='grayLine'></view>
+  <view class='row' bindtap='nickNameEdit'>
+    <text class='txtView'>昵称</text>
+    <view class='rightView'>
+      <text class='valueTxtView'>{{nickName}}</text>
+      <image class='rightIcon' src='/static/images/arrow_right.png'></image>
+    </view>
+  </view>
+  <view class='grayLine'></view>
+
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class='row'>
+      <text class='txtView'>性别</text>
+      <view class='rightView'>
+        <text class='valueTxtView'>{{gender}}</text>
+        <image class='rightIcon' src='/static/images/arrow_right.png'></image>
+      </view>
+    </view>
+  </picker>
+
+  <view class='grayLine'></view>
+  <view class='row' bindtap='realNameEdit'>
+    <text class='txtView'>真实姓名</text>
+    <view class='rightView'>
+      <text class='valueTxtView'>{{realName}}</text>
+      <image class='rightIcon' src='/static/images/arrow_right.png'></image>
+    </view>
+  </view>
+  <view class='grayLine'></view>
+
+  <!-- <view class='row' bindtap='phoneEdit'>
+    <text class='txtView'>手机号码</text>
+    <view class='rightView'>
+      <text class='valueTxtView'>{{phone}}</text>
+      <image class='rightIcon' src='/static/images/arrow_right.png'></image>
+    </view>
+  </view> -->
+
+  <button class='rowBt' open-type="getPhoneNumber" bindgetphonenumber='getPhoneNumber'>
+    <text class='txtView'>手机号码</text>
+    <view class='rightView'>
+      <text class='valueTxtView'>{{phone}}</text>
+      <image class='rightIcon' src='/static/images/arrow_right.png'></image>
+    </view>
+  </button>
+
+  <view class='grayLine'></view>
+  <view class='columRow' bindtap='personalDescEdit'>
+    <text class='txtDesc'>个性签名</text>
+    <text class='valueTxtDesc'>{{personalDesc}}</text>
+  </view>
+</view>

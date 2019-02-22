@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "新增房屋",
+  "usingComponents": {
+    "myToast": "/componets/myToast/index"
+  }
+}

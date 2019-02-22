@@ -1,0 +1,68 @@
+/* pages/addHouseFirst/index.wxss */
+page{
+  background: #eee;
+}
+.content{
+  width: 100%;
+  height: auto;
+}
+.houseBasic{
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin: 40rpx 0;
+  font-weight: 700;
+  color: #343434;
+}
+.BasicBox{
+  width: 690rpx;
+  margin: auto;
+  box-shadow: 0 1px 4px 0 #cacaca;
+  border-radius: 5px;
+  background: white;
+}
+.boxLine{
+  width: 630rpx;
+  padding-left:30rpx;
+  padding-right: 30rpx; 
+  height: 80rpx;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #343434;
+}
+.boxLine:last-child{
+  border-bottom:none; 
+}
+.boxLeft{
+  display: block;
+  width: 180rpx;
+}
+.boxRight{
+  display: flex;
+  align-items: center;
+}
+.boxRight text{
+  color: #000;
+}
+.boxRight input{
+  text-align: right;
+}
+.boxRight image{
+  width: 20px;
+  height: 20px;
+}
+
+.next{
+  width: 690rpx;
+  position: fixed;
+  left: 30rpx;
+  bottom:50rpx;
+  background: #ff9800;
+  color: white;
+  font-size: 18px;
+  border-radius:0; 
+  box-shadow: 1px 1px 4px 1px #cacaca;
+}

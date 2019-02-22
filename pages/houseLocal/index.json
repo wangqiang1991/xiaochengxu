@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "楼层房号",
+  "usingComponents": {
+    "myToast": "/componets/myToast/index"
+  }
+}

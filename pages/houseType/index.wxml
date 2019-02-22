@@ -1,0 +1,242 @@
+<!--pages/houseType/index.wxml-->
+<view class='content'>
+  <view class='title'>公寓</view>
+  <view class='houseTypeItem'>
+
+    <view class='item' bindtap='choiceType'  data-type='1' data-typename='普通公寓'>
+      <view>
+        <text class='name {{type == 1 ? "choiceName" : ""}}' data-type='1'>普通公寓</text>
+        <text class='desc'>个人房东经营的小区,公寓楼内房源</text>
+      </view>
+      <image hidden='{{type != 1}}' src='/static/images/choice.png'></image>
+    </view>
+
+    <view class='item' bindtap='choiceType' data-type='2' data-typename='酒店式公寓'>
+      <view>
+        <text class='name {{type == 2 ? "choiceName" : ""}}' data-type='2'>酒店式公寓</text>
+        <text class='desc'>提供酒店式服务的公寓</text>
+      </view>
+      <image hidden='{{type != 2}}' src='/static/images/choice.png'></image>
+    </view>
+
+  </view>
+
+  <view class='title'>客栈</view>
+  <view class='houseTypeItem'>
+
+    <view class='item' bindtap='choiceType' data-type='3' data-typename='客栈'>
+      <view>
+        <text class='name {{type == 3 ? "choiceName" : ""}}' data-type='3'>客栈</text>
+        <text class='desc'>外形具有明显当地名宿特色</text>
+      </view>
+      <image hidden='{{type != 3}}' src='/static/images/choice.png'></image>
+    </view>
+
+
+  </view>
+
+  <view class='title'>别墅</view>
+  <view class='houseTypeItem'>
+
+    <view class='item' bindtap='choiceType' data-type='4' data-typename='独栋别墅'>
+      <view>
+        <text class='name {{type == 4 ? "choiceName" : ""}}' data-type='4'>独栋别墅</text>
+        <text class='desc'>独门独院，无公用墙</text>
+      </view>
+      <image hidden='{{type != 4}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item' bindtap='choiceType' data-type='5' data-typename='别墅单间'>
+      <view>
+        <text class='name {{type == 5 ? "choiceName" : ""}}' data-type='5'>别墅单间</text>
+        <text class='desc'>别墅中的单个房间，有独卫</text>
+      </view>
+      <image hidden='{{type != 5}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item' bindtap='choiceType' data-type='6' data-typename='联排别墅'>
+      <view>
+        <text class='name {{type == 6 ? "choiceName" : ""}}' data-type='6'>联排别墅</text>
+        <text class='desc'>独门独院，有公用墙</text>
+      </view>
+      <image hidden='{{type != 6}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item' bindtap='choiceType' data-type='7' data-typename='叠拼别墅'>
+      <view>
+        <text class='name {{type == 7 ? "choiceName" : ""}}' data-type='7'>叠拼别墅</text>
+        <text class='desc'>多层别墅，上下叠加在一起</text>
+      </view>
+      <image hidden='{{type != 7}}' src='/static/images/choice.png'></image>
+    </view>
+
+    
+  </view>
+
+  <view class='title'>其他/特色</view>
+  <view class='houseTypeItem'>
+    <view class='item' bindtap='choiceType' data-type='8' data-typename='农家乐'>
+      <view>
+        <text class='name {{type == 8 ? "choiceName" : ""}}' data-type='8'>农家乐</text>
+        <text class='desc'>农村文化民宅</text>
+      </view>
+      <image hidden='{{type != 8}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item'  bindtap='choiceType' data-type='9' data-typename='老洋房'>
+      <view>
+        <text class='name {{type == 9 ? "choiceName" : ""}}' data-type='9'>老洋房</text>
+        <text class='desc'>带有国外风格，历史元素，以上海为典型</text>
+      </view>
+      <image hidden='{{type != 9}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item'  bindtap='choiceType' data-type='10' data-typename='四合院'>
+      <view>
+        <text class='name {{type == 10 ? "choiceName" : ""}}' data-type='10'>四合院</text>
+        <text class='desc'>中间小院，四面房屋，以北京为典型</text>
+      </view>
+      <image hidden='{{type != 10}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item' bindtap='choiceType' data-type='11' data-typename='渔家乐'>
+      <view>
+        <text class='name {{type == 11 ? "choiceName" : ""}}' data-type='11'>渔家乐</text>
+        <text class='desc'>水边带有渔村文化民宅</text>
+      </view>
+      <image hidden='{{type != 11}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item'  bindtap='choiceType' data-type='12' data-typename='木屋'>
+      <view>
+        <text class='name {{type == 12 ? "choiceName" : ""}}' data-type='12'>木屋</text>
+        <text class='desc'>木材为主要材料建造</text>
+      </view>
+      <image hidden='{{type != 12}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item' bindtap='choiceType' data-type='13' data-typename='韩屋'>
+      <view>
+        <text class='name {{type == 13 ? "choiceName" : ""}}' data-type='13'>韩屋</text>
+        <text class='desc'>带有韩国风格，历史元素</text>
+      </view>
+      <image hidden='{{type != 13}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item' bindtap='choiceType' data-type='14' data-typename='房车营地'>
+      <view>
+        <text class='name {{type == 14 ? "choiceName" : ""}}' data-type='14'>房车营地</text>
+        <text class='desc'>由车改造，住在车上及配套休息场所</text>
+      </view>
+      <image hidden='{{type != 14}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item' bindtap='choiceType' data-type='15' data-typename='蒙古包'>
+      <view>
+        <text class='name {{type == 15 ? "choiceName" : ""}}' data-type='15'>蒙古包</text>
+        <text class='desc'>圆形造型的蒙古族特色民居</text>
+      </view>
+      <image hidden='{{type != 15}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item'  bindtap='choiceType' data-type='16' data-typename='吊脚楼'>
+      <view>
+        <text class='name {{type == 16 ? "choiceName" : ""}}' data-type='16'>吊脚楼</text>
+        <text class='desc'>半悬空而建，少数民族传统名宿</text>
+      </view>
+      <image hidden='{{type != 16}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item'  bindtap='choiceType' data-type='17' data-typename='帐篷营地'>
+      <view>
+        <text class='name {{type == 17 ? "choiceName" : ""}}' data-type='17'>帐篷营地</text>
+        <text class='desc'>以帐篷为造型及配套休息场所</text>
+      </view>
+      <image hidden='{{type != 17}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item'  bindtap='choiceType' data-type='18' data-typename='土楼'>
+      <view>
+        <text class='name {{type == 18 ? "choiceName" : ""}}' data-type='18'>土楼</text>
+        <text class='desc'>客家地区且以生土筑墙</text>
+      </view>
+      <image hidden='{{type != 18}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item' bindtap='choiceType' data-type='19' data-typename='集装箱'>
+      <view>
+        <text class='name {{type == 19 ? "choiceName" : ""}}' data-type='19'>集装箱</text>
+        <text class='desc'>外形为集装箱形状</text>
+      </view>
+      <image hidden='{{type != 19}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item'  bindtap='choiceType' data-type='20' data-typename='石屋'>
+      <view>
+        <text class='name {{type == 20 ? "choiceName" : ""}}' data-type='20'>石屋</text>
+        <text class='desc'>以石头为材料建造的房子</text>
+      </view>
+      <image hidden='{{type != 20}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item'   bindtap='choiceType' data-type='21' data-typename='树屋'>
+      <view>
+        <text class='name {{type == 21 ? "choiceName" : ""}}' data-type='21'>树屋</text>
+        <text class='desc'>建在树干或者树枝上</text>
+      </view>
+      <image hidden='{{type != 21}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item'  bindtap='choiceType' data-type='22' data-typename='游艇'>
+      <view>
+        <text class='name {{type == 22 ? "choiceName" : ""}}' data-type='22'>游艇</text>
+        <text class='desc'>住宿，娱乐均在游艇上</text>
+      </view>
+      <image hidden='{{type != 22}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item'  bindtap='choiceType' data-type='23' data-typename='窑洞'>
+      <view>
+        <text class='name {{type == 23 ? "choiceName" : ""}}' data-type='23'>窑洞</text>
+        <text class='desc'>黄土高原上依山凿洞而建</text>
+      </view>
+      <image hidden='{{type != 23}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item'  bindtap='choiceType' data-type='24' data-typename='竹屋'>
+      <view>
+        <text class='name {{type == 24 ? "choiceName" : ""}}' data-type='24'>竹屋</text>
+        <text class='desc'>竹子为主要材料建造</text>
+      </view>
+      <image hidden='{{type != 24}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item' bindtap='choiceType' data-type='25' data-typename='碉楼'>
+      <view>
+        <text class='name {{type == 25 ? "choiceName" : ""}}' data-type='25'>碉楼</text>
+        <text class='desc'>碉堡形状</text>
+      </view>
+      <image hidden='{{type != 25}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item' bindtap='choiceType' data-type='26' data-typename='Loft复式'>
+      <view>
+        <text class='name {{type == 26 ? "choiceName" : ""}}' data-type='26'>Loft复式</text>
+        <text class='desc'>上下双层，复式结构</text>
+      </view>
+      <image hidden='{{type != 26}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item'  bindtap='choiceType' data-type='27' data-typename='船屋'>
+      <view>
+        <text class='name {{type == 27 ? "choiceName" : ""}}' data-type='27'>船屋</text>
+        <text class='desc'>由船改造，住在船上</text>
+      </view>
+      <image hidden='{{type != 27}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item'  bindtap='choiceType' data-type='28' data-typename='民营房'>
+      <view>
+        <text class='name {{type == 28 ? "choiceName" : ""}}' data-type='28'>民营房</text>
+        <text class='desc'>自主经营，可定制需求</text>
+      </view>
+      <image hidden='{{type != 28}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item'  bindtap='choiceType' data-type='29' data-typename='娱乐室'>
+      <view>
+        <text class='name {{type == 29 ? "choiceName" : ""}}' data-type='29'>娱乐室</text>
+        <text class='desc'>休闲娱乐于一体的场所</text>
+      </view>
+      <image hidden='{{type != 29}}' src='/static/images/choice.png'></image>
+    </view>
+    <view class='item'  bindtap='choiceType' data-type='30' data-typename='健身房'>
+      <view>
+        <text class='name {{type == 30 ? "choiceName" : ""}}' data-type='30'>健身房</text>
+        <text class='desc'>强健体魄，锻炼身心</text>
+      </view>
+      <image hidden='{{type != 30}}' src='/static/images/choice.png'></image>
+    </view>
+
+
+
+  </view>
+
+</view>
+

@@ -1,0 +1,47 @@
+/* pages/editInformation/index.wxss */
+
+page {
+  background: #eee;
+}
+
+.editView{
+  width: 630rpx;
+  position: relative;
+  height: auto;
+  margin: 30rpx auto 0;
+  background: white;
+  padding: 30rpx;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px 0 #cacaca;
+}
+
+.edit{
+  height: 60rpx;
+  width: 500rpx;
+}
+
+.saveBt {
+  width: 690rpx;
+  background: #ff9800;
+  color: white;
+  font-size: 14px;
+  border-radius: 0px;
+  height: 90rpx;
+  margin-top: 150rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30rpx;
+  box-shadow: 1px 1px 4px 1px #cacaca;
+  position:fixed;
+  top: 50rpx;
+}
+
+.deleteIcon{
+  align-items: center;
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+  top:70rpx;
+  right: 50rpx;
+}

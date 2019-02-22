@@ -1,0 +1,29 @@
+<!--pages/userLogin/userLogin.wxml-->
+<!-- bindgetphonenumber="getPhoneNumber" -->
+
+<!-- style='{width:20px;height:20px;}' -->
+
+<view class='background'>
+
+  <view class='text_title'>
+    <text>请先登陆</text>
+  </view>
+
+  <button class='wx_login_bt' open-type="getPhoneNumber" bindgetphonenumber='getPhoneNumber'>
+    <view class='content'>
+      <image src='/static/images/wx_icon.png' class='wxIcon'></image>
+
+      <text class='wx_button_text'>微信授权登陆</text>
+    </view>
+  </button>
+
+</view>
+
+<view class='popup' hidden='{{!showFillButton}}'>
+  <view class='content'>
+    <image src='../../static/images/logo.png'></image>
+    <text class='title'>全寓申请获取以下权限</text>
+    <text class='subtitle'>您的微信个人信息（用户名、头像、性别等）</text>
+    <button class="button" lang='zh_CN' open-type="getUserInfo" bindgetuserinfo='getUserInfo'>允许授权</button>
+  </view>
+</view>

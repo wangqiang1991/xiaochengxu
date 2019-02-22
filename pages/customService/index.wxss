@@ -1,0 +1,55 @@
+/* pages/customService/index.wxss */
+
+page {
+  background: #eee;
+}
+
+.itemView {
+  width: 630rpx;
+  height: auto;
+  margin: 30rpx auto 0;
+  background: white;
+  padding: 30rpx;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px 0 #cacaca;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.icon {
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  margin-right: 30rpx;
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.callBt {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ff9d0d;
+  width: 190rpx;
+  height: 70rpx;
+  background-color: white;
+  color: #ff9d0d;
+  font-size: 12px;
+}
+
+.serviceTxt {
+  font-size: 12px;
+}
+
+.serviceTxt2 {
+  font-size: 12px;
+  color: #666666;
+}
+
+.textView {
+  margin-right: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}

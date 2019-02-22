@@ -1,0 +1,11 @@
+<!--componets/ratingBar/index.wxml-->
+<view class='mark-like' bindtap='tapMark' >
+  <block wx:for="{{range}}" wx:key='index'>
+      <image wx:if="{{mark>=index+1}}" 
+          src='/static/images/r1.png'
+          data-mark="{{index+1}}"></image>
+      <image wx:if="{{mark<index+1}}" 
+          src='/static/images/r2.png'
+          data-mark="{{index+1}}"></image>
+  </block>
+</view>

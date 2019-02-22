@@ -1,0 +1,107 @@
+<!--pages/addHouseFirst/index.wxml-->
+<myToast id="myToast"></myToast>
+<view class='content'>
+  <text class='houseBasic'>房屋基本信息</text>
+
+  <view class='BasicBox'>
+    <view class='boxLine'>
+      <text class='boxLeft'>房屋类型</text>
+      <view class='boxRight' bindtap='choiceHouseType'><text>{{addHouseData.typeName ? addHouseData.typeName : "请选择房屋类型"}} </text><image src='/static/images/arrow_right.png'></image></view> 
+    </view>
+
+    <view class='boxLine'>
+      <text class='boxLeft'>房屋名称</text>
+      <view class='boxRight'>
+        <input maxlength='20' bindinput='houseNameInput' value="{{addHouseData.houseName}}" placeholder='请输入房屋名称'></input>
+      </view> 
+    </view>
+
+    <view class='boxLine'>
+      <text class='boxLeft'>房屋面积</text>
+      <view class='boxRight'>
+        <input maxlength='20' bindinput='houseAcreageInput' value="{{addHouseData.acreage}}"  placeholder='请输入房屋面积(平米)'></input>
+      </view> 
+    </view>
+     
+
+    <view class='boxLine'>
+      <text class='boxLeft'>房屋户型</text>
+      <view class='boxRight'  bindtap='choiceHouseSize'>
+        <text hidden='{{addHouseData.bedRoomNumber != 0}}'>请输入户型</text>
+        <text hidden='{{addHouseData.bedRoomNumber == 0}}'>{{addHouseData.bedRoomNumber}}室{{addHouseData.livingRoomNumber}}厅{{addHouseData.washRoomNumber}}卫 </text>
+        <image src='/static/images/arrow_right.png'></image>
+      </view> 
+    </view>
+
+    <view class='boxLine'>
+      <text class='boxLeft'>房屋楼层</text>
+      <view class='boxRight'>
+        <input maxlength='50' bindinput='houseLocalInput' value="{{addHouseData.detailAddress}}"  placeholder='xx栋xx单元xx号'></input>
+      </view> 
+    </view>
+
+    <!-- <view class='boxLine'>
+      <text class='boxLeft'>房屋楼层</text>
+      <view class='boxRight'  bindtap='choiceHouseLocal'>
+        <text hidden='{{addHouseData.houseOrder != 0}}'>请输入楼层</text>
+        <text hidden='{{addHouseData.houseOrder == 0}}'>{{addHouseData.houseOrder}}栋{{addHouseData.unit}}单元{{addHouseData.floor}}楼{{addHouseData.number}}号 </text>
+        <image src='/static/images/arrow_right.png'></image>
+      </view> 
+    </view> -->
+
+  </view>
+
+  <text class='houseBasic' style='margin-top:90rpx;'>房屋入住规则</text>
+  <view class='BasicBox'>
+    <view class='boxLine'>
+      <text class='boxLeft'>入住时间</text>
+      <view class='boxRight'>
+
+        <picker
+          mode="multiSelector"
+          bindchange="eTimeChange"
+          value="{{emultiIndex}}"
+          range="{{emultiArray}}"
+        >
+          <view class="picker" hidden='{{addHouseData.enterTime != null}}'>
+            入住时间
+          </view>
+          <view class="picker" hidden='{{addHouseData.enterTime == null}}'>
+            {{addHouseData.enterTime}}后
+          </view>    
+        </picker>
+
+        <image src='/static/images/arrow_right.png'></image>
+      </view> 
+
+    </view>
+
+    <view class='boxLine'>
+      <text class='boxLeft'>离店时间</text>
+      <view class='boxRight'>
+        <view class='boxRight'>
+          
+          <picker
+            mode="multiSelector"
+            bindchange="lTimeChange"
+            value="{{lmultiIndex}}"
+            range="{{lmultiArray}}"
+          >
+            <view class="picker" hidden='{{addHouseData.leaveTime != null}}'>
+              离店时间
+            </view>
+            <view class="picker" hidden='{{addHouseData.leaveTime == null}}'>
+              {{addHouseData.leaveTime}}前
+            </view>    
+          </picker>
+
+          <image src='/static/images/arrow_right.png'></image>
+        </view> 
+      </view> 
+    </view>
+
+  </view>
+  
+  <button bindtap='gotoNext' class='next'>下一步</button>
+
+</view>

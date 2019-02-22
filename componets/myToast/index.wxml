@@ -1,0 +1,8 @@
+<!-- 自定义toast组件 -->
+<view class="toast_content_box" hidden='{{hidden}}'>  
+  <view class="toast_content {{hidden ? '' : 'showToast'}}" >  
+    <view class="toast_content_text">  
+      {{content}} 
+    </view>  
+  </view>  
+</view> 

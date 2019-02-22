@@ -1,0 +1,153 @@
+/* pages/houseDetail/index.wxss */
+page{
+  background: #eee;
+}
+.content{
+  width: 100%;
+  height: auto;
+  padding-bottom: 100rpx;
+}
+.title{
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin: 40rpx auto 20rpx;
+  font-weight: 700;
+  color: #343434;
+}
+.detailbox{
+  width: 630rpx;
+  margin: auto;
+  box-shadow: 0 1px 4px 0 #cacaca;
+  border-radius: 5px;
+  background: white;
+  padding: 20rpx 30rpx;
+}
+.houseTitle{
+  display: block;
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 16rpx;
+  text-align: left;
+  font-weight: 700;
+}
+.desc{
+  display: block;
+  font-size: 14px;
+  color: #343434;
+  margin-bottom: 16rpx;
+}
+.detail{
+  display: block;
+  font-size: 12px;
+  color: #999;
+}
+.detailLocal{
+  display: flex;
+  font-size: 14px;
+  color: #343434;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+}
+.detailLocal>text{
+  display: block;
+  width: 420rpx;
+
+}
+.localBox{
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.localBox>image{
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-right: 6rpx;
+}
+.localBox>text{
+  display: block;
+  font-size: 14px;
+  color: #ff9800;
+}
+.map{
+  width: 100%;
+  height: 400rpx;
+  margin-top: 20rpx;
+  position: relative;
+}
+.map>image.mapImage{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.map>view{
+  position: absolute;
+  top: 0;left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.map>map{
+  width: 100%;
+  height: 400rpx;
+}
+
+.BasicBox{
+  width: 630rpx;
+  margin:0 auto 50rpx;
+  box-shadow: 0 1px 4px 0 #cacaca;
+  border-radius: 5px;
+  background: white;
+  padding: 20rpx 30rpx;
+}
+.boxLine{
+  width: 630rpx;
+  height: 80rpx;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #343434;
+}
+.boxLine:last-child{
+  border-bottom:none; 
+}
+
+.operationBox{
+  width: 750rpx;
+  height: 100rpx;
+  display: flex;
+  position: fixed;
+  left: 0;bottom: 0;
+}
+.operationBox>view{
+  border-radius: 0;
+  color: white;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+.operationBox>view image{
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+.edit{
+  flex: 2;
+  background: #4db3ff;
+}
+
+.service{
+  flex: 5;
+  background: #ff9800;
+}
+
+.bf {
+  font-weight: 700;
+}
